@@ -25,10 +25,12 @@ import org.apache.spark.util.collection.OpenHashSet
  */
 package object graphx {
   /**
-   * A 64-bit vertex identifier that uniquely identifies a vertex within a graph. It does not need
+   * A vertex identifier that uniquely identifies a vertex within a graph. It does not need
    * to follow any ordering or any constraints other than uniqueness.
+   * For a 32 bit UUID String is more common than a 64 bit long .
+   * Change the type of VertexId from Long to String.
    */
-  type VertexId = Long
+  type VertexId = String
 
   /** Integer identifier of a graph partition. Must be less than 2^30. */
   // TODO: Consider using Char.
